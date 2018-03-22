@@ -1,5 +1,5 @@
 """
-This script runs the LearningTrajectory application using a development server.
+This script runs the MyLearningPath application using a development server.
 """
 
 from os import environ
