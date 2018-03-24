@@ -35,3 +35,13 @@ def about():
         year=datetime.now().year,
         message='Something about me.'
     )
+
+@app.route('/japanese')
+def japanese():
+    """Renders the japanese page."""
+    return render_template(
+        'japanese.html',
+        title='Japanese Learning Trajectory',
+        year=datetime.now().year,
+        message='Record my Japanese progress.'
+    )
