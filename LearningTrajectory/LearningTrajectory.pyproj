@@ -27,12 +27,19 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="LearningTrajectory\database.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LearningTrajectory\models\jp.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="LearningTrajectory\__init__.py" />
     <Compile Include="LearningTrajectory\views.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LearningTrajectory\" />
+    <Folder Include="C:\Users\mvgos\source\repos\LearningTrajectory\LearningTrajectory\LearningTrajectory\models\" />
     <Folder Include="LearningTrajectory\static\" />
     <Folder Include="LearningTrajectory\static\content\" />
     <Folder Include="LearningTrajectory\static\fonts\" />

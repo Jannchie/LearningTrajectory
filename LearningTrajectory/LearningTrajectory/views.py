@@ -2,10 +2,12 @@
 Routes and views for the flask application.
 """
 
+
 from datetime import datetime
 from flask import render_template
 from LearningTrajectory import app
-
+from LearningTrajectory.database import db
+from LearningTrajectory.models.jp import Jp
 @app.route('/')
 @app.route('/home')
 def home():
@@ -29,6 +31,7 @@ def contact():
 @app.route('/about')
 def about():
     """Renders the about page."""
+
     return render_template(
         'about.html',
         title='About',
@@ -38,9 +41,12 @@ def about():
 
 @app.route('/japanese')
 def japanese():
+    j = Jp.query.all()
+
     """Renders the japanese page."""
     return render_template(
         'japanese.html',
+        data=j,
         title='Japanese Learning Trajectory',
         year=datetime.now().year,
         message='Record my Japanese progress.'
