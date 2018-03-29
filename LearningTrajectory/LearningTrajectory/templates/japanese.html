@@ -1,8 +1,8 @@
-{% extends "layout.html" %}
+﻿{% extends "layout.html" %}
 
 {% block content %}
 
-<h2>{{ title }}.</h2>
+<h2>{{ title }}</h2>
 <h3>{{ message }}</h3>
 
 
@@ -14,6 +14,82 @@
 <p>
     Here is a chart showing my progress:
 </p>
-<p>{{ data }}</p>
+<p></p>
+<p>
+    <div id="container" style="min-width:400px;height:600px"></div>
+</p>
 
+<script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+<script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+<script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+<script src="../static/scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $.getJSON("./japaneseGraph", function (data) {
+        Date()
+        var d = data;
+        for (var i = 0; i < d.length; i++) {
+            d[i][0] = new Date(Date.parse(d[i][0])).getTime();
+        }
+
+        var chart = Highcharts.chart('container', {
+            chart: {
+                type: 'spline'
+            },
+            title: {
+                text: '日语词汇学习进程'
+            },
+            subtitle: {
+                text: 'N2学习进度'
+            },
+            xAxis: {
+                type: 'datetime',
+                title: {
+                    text: null
+                },
+                min: Date.UTC(2018, 2, 20),
+                max: Date.UTC(2018, 6, 1)
+            },
+            yAxis: {
+                title: {
+                    text: '日语词汇 个数 (个)'
+                },
+                min: 0,
+                max: 3100,
+                minorGridLineWidth: 1,
+                gridLineWidth: 0,
+                alternateGridColor: null,
+                plotBands: [{ // 目标词汇量
+                    from: 3000,
+                    to: 3100,
+                    color: 'rgba(68, 170, 213, 0.1)',
+                    label: {
+                        text: '目标词汇量',
+                        style: {
+                            color: '#606060'
+                        }
+                    }
+                }]
+            },
+            tooltip: {
+                headerFormat: '<b>{series.name}</b><br>',
+                pointFormat: '{point.x:%b %e日}: {point.y} 个'
+            },
+            plotOptions: {
+                spline: {
+                    marker: {
+                        enabled: true
+                    }
+                }
+            },
+            series: [{
+                name: '已经学习',
+                // Define the data points. All series have a dummy year
+                // of 1970/71 in order to be compared on the same x axis. Note
+                // that in JavaScript, months start at 0 for January, 1 for February etc.
+                data: d
+            },]
+        });
+    });
+
+</script>
 {% endblock %}
