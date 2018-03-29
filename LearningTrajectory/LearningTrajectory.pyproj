@@ -30,9 +30,7 @@
     <Compile Include="LearningTrajectory\database.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="LearningTrajectory\models\jp.py">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="LearningTrajectory\JapaneseVocabularyTrajectory.py" />
     <Compile Include="runserver.py" />
     <Compile Include="LearningTrajectory\__init__.py" />
     <Compile Include="LearningTrajectory\views.py" />
@@ -47,6 +45,9 @@
     <Folder Include="LearningTrajectory\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LearningTrajectory\learningTrajectory.conf">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="LearningTrajectory\templates\japanese.html" />
     <Content Include="requirements.txt" />
     <Content Include="LearningTrajectory\static\content\bootstrap.css" />
