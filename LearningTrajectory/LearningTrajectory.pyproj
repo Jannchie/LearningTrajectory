@@ -38,6 +38,7 @@
   <ItemGroup>
     <Folder Include="LearningTrajectory\" />
     <Folder Include="C:\Users\mvgos\source\repos\LearningTrajectory\LearningTrajectory\LearningTrajectory\models\" />
+    <Folder Include="LearningTrajectory\models\" />
     <Folder Include="LearningTrajectory\static\" />
     <Folder Include="LearningTrajectory\static\content\" />
     <Folder Include="LearningTrajectory\static\fonts\" />

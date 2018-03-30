@@ -1,13 +1,16 @@
-{% extends "layout.html" %}
+﻿{% extends "layout.html" %}
 
 {% block content %}
 
-<h2>{{ title }}.</h2>
+<h2>{{ title }}</h2>
 <h3>{{ message }}</h3>
 
 <p>
-    This is one of my personal web apps, and I'm going to use some of the front-end knowledge here to visualize my learning trajectory.At the same time,
-    the Web app can also be used for some simple online learning.The back end USES the Python Flask framework.
-</p>
+    这是我的一个个人网络应用，我将在这个网页上展示我个人可视化的学习轨迹。
+<p>
+    这个网络应用程序一方面算是Web编程的练手项目，与此同时,我通过这个应用来记录学习的进度。
+<p>
+    目前这个网页的后端使用了基于Python的Flask框架。数据库使用的是Mysql。前端使用了HighCharts来可视化数据。前端框架用的是非常简单易行的Bootstrap框架。
+<p>
 
-{% endblock %}
+    {% endblock %}

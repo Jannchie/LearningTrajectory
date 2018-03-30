@@ -7,16 +7,24 @@
 
 
 <p>
-    In order to be able to study in Japan, I need to study Japanese and prepare for the N2 exam.
-    Now my vocabulary is very poor, so I need to accumulate a lot of words.This page USES HighChart
-    to visualize my Japanese learning progress, which motivates me to study hard.
+    为了毕业之后能前往日本继续学习，我需要在这半年里学习日语，准备参加N2考试。
 </p>
 <p>
-    Here is a chart showing my progress:
+    现在我的词汇量还很差，所以我需要积累大量的词汇。这个页面使用HighChart对数据进行可视化，使我的日语学习的进程更加形象直观，但愿这能够激励我更加努力地学习。
 </p>
-<p></p>
+
+    下面这张图表展示了我的学习进度:
+</p>
 <p>
-    <div id="container" style="min-width:400px;height:600px"></div>
+
+</p>
+<p>
+    <div id="container" style="min-width:400px;height:450px"></div>
+</p>
+<p>
+    <b>2018-3-30：</b>
+    <br>
+    总的来说，如果按照这个进度继续学习下去的话，应该可以提前完成任务。只不过记忆的牢固程度会有所欠缺，所以应该要在学习新知识的同时进行复习。
 </p>
 
 <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
@@ -43,11 +51,11 @@
             },
             xAxis: {
                 type: 'datetime',
-                title: {
-                    text: null
+                dateTimeLabelFormats: {
+                    month: '%b %e'
                 },
                 min: Date.UTC(2018, 2, 20),
-                max: Date.UTC(2018, 6, 1)
+                max: Date.UTC(2018, 7, 1)
             },
             yAxis: {
                 title: {
