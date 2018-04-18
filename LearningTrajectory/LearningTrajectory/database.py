@@ -14,7 +14,7 @@ curr_dir = os.path.dirname(os.path.realpath(__file__))
 """
 def getConfig(section,key):
     config = configparser.ConfigParser()
-    config.read(curr_dir + "\learningTrajectory.conf")
+    config.read(curr_dir + "/learningTrajectory.conf")
     return config.get(section,key)
 
 JVTconnectionstring = getConfig("database","JVTconnectionstring")
