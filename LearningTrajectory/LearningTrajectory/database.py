@@ -14,7 +14,9 @@ curr_dir = os.path.dirname(os.path.realpath(__file__))
 """
 def getConfig(section,key):
     config = configparser.ConfigParser()
-    config.read(curr_dir + "/learningTrajectory.conf")
+
+    # 使用os.path.join来屏蔽路径的斜杠，从而兼容Windows和Linux
+    config.read(os.path.join(curr_dir,"learningTrajectory.conf"))
     return config.get(section,key)
 
 JVTconnectionstring = getConfig("database","JVTconnectionstring")
