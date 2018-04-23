@@ -1,11 +1,9 @@
 """
 This script runs the MyLearningPath application using a development server.
 """
-import sys
-
-if sys.version_info < (3,0):
-    reload(sys)
-    sys.setdefaultencoding('utf8')
+#import sys
+#reload(sys)
+#sys.setdefaultencoding('utf8')
 
 from os import environ
 from LearningTrajectory import app
